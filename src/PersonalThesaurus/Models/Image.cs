@@ -2,12 +2,19 @@
 
 namespace PersonalThesaurus.Models
 {
+   
     public class Image
     {
+   
         public int ID { get; set; }
         public int size { get; set; }
         public string fileName { get; set; }
-        public byte[] data { get; set; }
-        //public HttpPostedFileBase file { get; set; }
+        public string imagePath { get; set; }
+        //public Image(int Size, string file, string path)
+        //{
+        //    Size = size;
+        //    file = fileName;
+        //    path = imagePath;
+        //}
     }
 }
