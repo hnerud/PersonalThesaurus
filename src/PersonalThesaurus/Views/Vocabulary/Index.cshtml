@@ -25,6 +25,11 @@
                 @Html.DisplayFor(modelItem => item.term)
             </td>
             <td>
+                <div class="result">
+                    <img src="~/images/idyllic.jpg" alt="Thumbnail image" />
+                </div>
+            </td>
+            <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
