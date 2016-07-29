@@ -25,13 +25,14 @@ namespace PersonalThesaurus.Models
                      new Vocabulary
                      {
                          term = "idyllic",
-                         image = {size = 6, fileName = "idyllic.jpg", imagePath="images/idyllic.jpg"},
-                         _context.contextTerms.Add(new ContextTerm
-                         {
-                             term="pleasant",
-                             type = "basic"
-                         }
-                        
+                         image = { size = 6, fileName = "idyllic.jpg", imagePath = "images/idyllic.jpg" }
+
+                         //contextTerms.Add(new ContextTerm
+                         //{
+                         //    term = "pleasant",
+                         //    type = "basic"
+                         //})
+                         //add context terms where vocab Id = current 
 
                      }
                        );

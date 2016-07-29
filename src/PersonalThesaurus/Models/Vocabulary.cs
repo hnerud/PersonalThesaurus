@@ -10,13 +10,14 @@ namespace PersonalThesaurus.Models
         public int ID { get; set; }
         public string term { get; set; }
         //don't need to get set below because their corresponding classes already do this?
-        public Image image;
-        public List<ContextTerm> contextTerms { get; set; }
+        public Image image { get; set; }
+
+        public List<ContextTerm> contextTerms;
 
         public Vocabulary()
         {
-            contextTerms = new List<ContextTerm>();
-            //image = new Image();
+            //contextTerms = new List<ContextTerm>();
+           image = new Image();
 
         }
 
