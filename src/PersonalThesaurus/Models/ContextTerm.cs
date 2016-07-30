@@ -5,6 +5,9 @@
         public int ID { get; set; }
         public string term { get; set; }
         public string type { get; set; }
+        public int VocabularyID { get; set; }
+
+        public virtual Vocabulary Vocabulary { get; set; }
 
        
        

@@ -25,9 +25,17 @@
                 @Html.DisplayFor(modelItem => item.term)
             </td>
             <td>
-                <div class="result">
+                @Html.DisplayFor(modelItem => item.image)
+            </td>
+            <td>
+              
+               
+               
+                 @*need to do above for image - need a controller for image and vocab?
+                     
+                     <div class="result">
                     <img src="~/images/idyllic.jpg" alt="Thumbnail image" />
-                </div>
+                </div>*@
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
