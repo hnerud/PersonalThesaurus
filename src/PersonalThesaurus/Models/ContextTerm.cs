@@ -9,7 +9,7 @@ namespace PersonalThesaurus.Models
         public string term { get; set; }
         public string type { get; set; }
 
-
+        public int VocabularyID { get; set; }
 
         public virtual Vocabulary Vocabulary { get; set; }
 
