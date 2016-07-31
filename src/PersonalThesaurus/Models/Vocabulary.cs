@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace PersonalThesaurus.Models
         [Display(Name="Image")]
         public int imageID { get; set; }
         public Image image { get; set; }
+
 
         public virtual ICollection<ContextTerm> contextTerms { get; set; }
 
