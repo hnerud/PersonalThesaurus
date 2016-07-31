@@ -16,7 +16,7 @@ namespace PersonalThesaurus.Models
         {
             using (var context = new ApplicationDbContext(serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
             {
-                if (context.Vocabulary.Any())
+                if (context.ContextTerm.Any())
                 {
                     return;
                 }
@@ -24,7 +24,7 @@ namespace PersonalThesaurus.Models
                 context.Vocabulary.AddRange(
                      new Vocabulary
                      {
-                         term = "idyllic",
+                         term = "conformity",
                          image = { size = 6, fileName = "idyllic.jpg", imagePath = "images/idyllic.jpg" },
                         
                          
@@ -43,7 +43,33 @@ namespace PersonalThesaurus.Models
                      }
                        );
 
-               
+                context.ContextTerm.AddRange(
+                    new ContextTerm
+                    {
+
+
+
+
+                        VocabularyID=7,
+                        term = "pleasant",
+                        type = "basic",
+                    },
+
+                        new ContextTerm
+                        {
+                            VocabularyID=7,
+                            term = "bucolic",
+                            type = "advanced",
+
+                            //add context terms where vocab Id = current 
+
+
+
+
+                        }
+                      );
+
+
                 context.SaveChanges();
             }
         }

@@ -1,77 +1,93 @@
 @model IEnumerable<PersonalThesaurus.Models.Vocabulary>
 
-<PersonalThesaurus.Data.Vocabulary>
-    <h4>Synonyms</h4>
-    <hr />
-    <table class="table-condensed table-bordered table-responsive">
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Synonyms</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<hr />
+<table class="table-condensed table-bordered table-responsive">
+    <thead>
+        <tr>
+            <th>Term</th>
+            <th>Synonym</th>
+
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var Vocabulary in Model)
+            {
+
+        <tr>
+            <td>@Vocabulary.term</td>
+
+            <td>
+                @foreach (var term in Vocabulary.contextTerms)
+                {
+                    @Html.Partial("_VocabSynonym", term)
+
+                }
+
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@Vocabulary.ID">Edit</a> |
+                @*<a asp-action="Details" asp-route-id="@Vocabulary.ID">Details</a> |*@
+                <a asp-action="Delete" asp-route-id="@Vocabulary.ID">Delete</a>
+            </td>
+        </tr>
+            
+    }
+
+    </tbody>
+
+</table>
+
+
+
+
+
+@*
+
+
+
+
+        @model IEnumerable<PersonalThesaurus.Models.Vocabulary>
+
+    @{
+        ViewData["Title"] = "Index";
+    }
+
+    <h2>Index</h2>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
         <thead>
             <tr>
-                <th>Term</th>
-                <th>Synonym</th>
-                
+                <th>
+                    @Html.DisplayNameFor(model => model.term)
+                </th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var Vocabulary in Model)
-            {
-
-                <tr>
-                    <td>@Vocabulary.term</td>
-                    
-                    <td>
-                        @foreach (var term in Vocabulary.contextTerms)
-                        {
-                            @Html.Partial("_VocabSynonym", term)
-                        }
-
-                    </td>
-                </tr>
-            }
-
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.term)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+    }
         </tbody>
-    </table>
-
-
-
-
-
-    @*
-
-
-
-
-            @model IEnumerable<PersonalThesaurus.Models.Vocabulary>
-
-        @{
-            ViewData["Title"] = "Index";
-        }
-
-        <h2>Index</h2>
-
-        <p>
-            <a asp-action="Create">Create New</a>
-        </p>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.term)
-                    </th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-        @foreach (var item in Model) {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.term)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-                    </td>
-                </tr>
-        }
-            </tbody>
-        </table>*@
+    </table>*@
