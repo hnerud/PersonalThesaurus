@@ -25,8 +25,11 @@ namespace PersonalThesaurus.Models
                      new Vocabulary
                      {
                          term = "idyllic",
-                         image = { size = 6, fileName = "idyllic.jpg", imagePath = "images/idyllic.jpg" }
-
+                         image = { size = 6, fileName = "idyllic.jpg", imagePath = "images/idyllic.jpg" },
+                        
+                         
+                         
+                        
                          //contextTerms.Add(new ContextTerm
                          //{
                          //    term = "pleasant",
@@ -34,8 +37,13 @@ namespace PersonalThesaurus.Models
                          //})
                          //add context terms where vocab Id = current 
 
+                        
+                         
+
                      }
                        );
+
+               
                 context.SaveChanges();
             }
         }

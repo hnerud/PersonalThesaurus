@@ -10,11 +10,6 @@ namespace PersonalThesaurus.Models
         public int size { get; set; }
         public string fileName { get; set; }
         public string imagePath { get; set; }
-        //public Image(int Size, string file, string path)
-        //{
-        //    Size = size;
-        //    file = fileName;
-        //    path = imagePath;
-        //}
+        
     }
 }

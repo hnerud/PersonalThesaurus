@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace PersonalThesaurus.Models
 {
@@ -10,6 +12,7 @@ namespace PersonalThesaurus.Models
         public int ID { get; set; }
         public string term { get; set; }
         //don't need to get set below because their corresponding classes already do this?
+        [Display(Name="Image")]
         public int imageID { get; set; }
         public Image image { get; set; }
 
@@ -17,7 +20,8 @@ namespace PersonalThesaurus.Models
 
         public Vocabulary()
         {
-            //contextTerms = new List<ContextTerm>();
+            // contextTerms = new List<ContextTerm>();
+            List<object> contextTerms = new List<object>();
            image = new Image();
 
         }

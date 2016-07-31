@@ -1,10 +1,10 @@
-@model IEnumerable<PersonalThesaurus.Models.Vocabulary>
+@model IEnumerable<PersonalThesaurus.Models.ContextTerm>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>Vocabulary</h2>
+<h2>Index</h2>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -15,6 +15,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.term)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.type)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -24,16 +27,8 @@
             <td>
                 @Html.DisplayFor(modelItem => item.term)
             </td>
-            
             <td>
-              
-               
-               
-                 @*need to do above for image - need a controller for image and vocab?
-                     
-                     <div class="result">
-                    <img src="~/images/idyllic.jpg" alt="Thumbnail image" />
-                </div>*@
+                @Html.DisplayFor(modelItem => item.type)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |

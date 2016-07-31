@@ -24,5 +24,9 @@ namespace PersonalThesaurus.Data
         }
 
         public DbSet<Vocabulary> Vocabulary { get; set; }
+
+        public DbSet<ContextTerm> ContextTerm { get; set; }
+
+        public DbSet<Image> Image { get; set; }
     }
 }
