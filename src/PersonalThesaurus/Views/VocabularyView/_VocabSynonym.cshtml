@@ -2,6 +2,13 @@
 
 <body>
     <span style="color:aqua">Synonym: @Model.term</span><br />
-    Level:  @Model.type<br />   
+    Level:  @Model.type<br />
+
+    <a href="ContextTerm" class="Edit">Edit</a>
 </body>
+<script>
+$('.Edit').click(function() {
+  $('.divForEdit').Load('@Url.Action("ContextTerm", "Edit", new {id = Model.ID})')
+});
+</script>
 <hr />  

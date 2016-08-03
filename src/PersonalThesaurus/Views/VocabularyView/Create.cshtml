@@ -11,12 +11,21 @@
         <h4>Vocabulary</h4>
         <hr />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-group">
+        @*<div class="form-group">
             <label asp-for="imageID" class="col-md-2 control-label"></label>
             <div class="col-md-10">
                 <select asp-for="imageID" class ="form-control" asp-items="ViewBag.imageID"></select>
             </div>
-        </div>
+        </div>*@
+        @*<div class="form-group">
+            <label asp-for="contextTerms" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="contextTerms" class="form-control" />
+                <span asp-validation-for="contextTerms" class="text-danger" />
+            </div>
+        </div>*@
+
+
         <div class="form-group">
             <label asp-for="term" class="col-md-2 control-label"></label>
             <div class="col-md-10">

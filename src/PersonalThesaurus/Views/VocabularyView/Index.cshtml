@@ -11,7 +11,7 @@
     <a asp-action="Create">Create New</a>
 </p>
 <hr />
-<table class="table-condensed table-bordered table-responsive">
+<table class="table">
     <thead>
         <tr>
             <th>Term</th>
@@ -32,13 +32,13 @@
                     @Html.Partial("_VocabSynonym", term)
 
                 }
-
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@Vocabulary.ID">Edit</a> |
+        
+                @*<a asp-action="Edit" asp-route-id="@Vocabulary.ID">Edit</a> |*@
                 @*<a asp-action="Details" asp-route-id="@Vocabulary.ID">Details</a> |*@
-                <a asp-action="Delete" asp-route-id="@Vocabulary.ID">Delete</a>
+                @*<a asp-action="Delete" asp-route-id="@Vocabulary.ID">Delete</a>*@
+                
             </td>
+            
         </tr>
             
     }
