@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using PersonalThesaurus.Data;
+using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
 
 namespace PersonalThesaurus.Models
@@ -13,7 +14,13 @@ namespace PersonalThesaurus.Models
 
         public virtual Vocabulary Vocabulary { get; set; }
 
-       
-       
+      
+
+
+
+
+
+
+
     }
 }

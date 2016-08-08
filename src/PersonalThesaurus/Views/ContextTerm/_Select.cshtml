@@ -1,0 +1,7 @@
+@model IEnumerable<PersonalThesaurus.Models.Vocabulary>
+
+
+
+@Html.DropDownList("Term", Model.Select(m => new SelectListItem() { Text = m.term, Value = m.term }).ToList(), "Select")
+
+

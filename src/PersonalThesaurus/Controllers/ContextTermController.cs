@@ -46,9 +46,10 @@ namespace PersonalThesaurus.Controllers
         // GET: ContextTerm/Create
         public IActionResult Create()
         {
-            //ViewData["VocabularyID"] = new SelectList(_context.Vocabulary, "ID", "ID");
+            ViewData["VocabularyID"] = new SelectList(_context.Vocabulary, "ID", "ID");
 
-            ViewBag.Items = new SelectList(_context.Vocabulary, "ID", "Name");
+           
+
             return View();
         }
 
@@ -65,8 +66,8 @@ namespace PersonalThesaurus.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            //ViewData["VocabularyID"] = new SelectList(_context.Vocabulary, "ID", "ID", contextTerm.VocabularyID);
-            ViewBag.Items = new SelectList(_context.Vocabulary, "ID", "Name", contextTerm.VocabularyID);
+            ViewData["VocabularyID"] = new SelectList(_context.Vocabulary, "ID", "ID", contextTerm.VocabularyID);
+          
             return View(contextTerm);
         }
 
@@ -78,13 +79,21 @@ namespace PersonalThesaurus.Controllers
                 return NotFound();
             }
 
+           
+            //change next
+
             var contextTerm = await _context.ContextTerm.SingleOrDefaultAsync(m => m.ID == id);
+            
+
             if (contextTerm == null)
             {
                 return NotFound();
             }
             //ViewData["VocabularyID"] = new SelectList(_context.Vocabulary, "ID", "ID", contextTerm.VocabularyID);
-            ViewBag.Items = new SelectList(_context.Vocabulary, "ID", "Name", contextTerm.VocabularyID);
+           
+            ViewData["VocabularyID"] = new SelectList(_context.Vocabulary, "ID", "ID", contextTerm.Vocabulary);
+            var vocabview = new Vocabulary();
+
             return View(contextTerm);
         }
 
@@ -120,8 +129,8 @@ namespace PersonalThesaurus.Controllers
                 }
                 return RedirectToAction("Index");
             }
-            //ViewData["VocabularyID"] = new SelectList(_context.Vocabulary, "ID", "ID", contextTerm.VocabularyID);
-            ViewBag.Items = new SelectList(_context.Vocabulary, "ID", "Name", contextTerm.VocabularyID);
+            ViewData["VocabularyID"] = new SelectList(_context.Vocabulary, "ID", "ID", contextTerm.VocabularyID);
+            
             return View(contextTerm);
         }
 
